@@ -19,5 +19,6 @@ namespace Drones.Entities.Models
 
         public virtual DbSet<Drone> Drones { get; set; } = null!;
         public virtual DbSet<Medication> Medications { get; set; } = null!;
+
     }
 }

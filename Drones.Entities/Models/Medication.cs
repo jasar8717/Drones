@@ -6,7 +6,7 @@
         public string Name { get; set; }
         public float Weight { get; set; }
         public string Code { get; set; }
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
         public int? DroneId { get; set; }
 
         public virtual Drone? Drone { get; set; }
