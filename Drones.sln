@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drones.Api", "Drones\Drones.Api.csproj", "{EC019F7C-AD57-4933-8DE3-0A71D619C37D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "drones-api-test", "drones-api-test\drones-api-test.csproj", "{C8662C8E-C552-45B3-8494-8A8BE50B615A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drones.Core", "Drones.Core\Drones.Core.csproj", "{FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drones.Services", "Drones.Services\Drones.Services.csproj", "{A8431068-5AFC-4B11-9BE2-C362535E3EA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drones.Data", "Drones.Data\Drones.Data.csproj", "{4D51D8E0-0366-42D5-BEA7-EBEA1299C837}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drones.Entities", "Drones.Entities\Drones.Entities.csproj", "{C2800E6C-FC40-4793-BBA0-787A04C97B01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC019F7C-AD57-4933-8DE3-0A71D619C37D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC019F7C-AD57-4933-8DE3-0A71D619C37D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC019F7C-AD57-4933-8DE3-0A71D619C37D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC019F7C-AD57-4933-8DE3-0A71D619C37D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8662C8E-C552-45B3-8494-8A8BE50B615A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8662C8E-C552-45B3-8494-8A8BE50B615A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8662C8E-C552-45B3-8494-8A8BE50B615A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8662C8E-C552-45B3-8494-8A8BE50B615A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8431068-5AFC-4B11-9BE2-C362535E3EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8431068-5AFC-4B11-9BE2-C362535E3EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8431068-5AFC-4B11-9BE2-C362535E3EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8431068-5AFC-4B11-9BE2-C362535E3EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D51D8E0-0366-42D5-BEA7-EBEA1299C837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D51D8E0-0366-42D5-BEA7-EBEA1299C837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D51D8E0-0366-42D5-BEA7-EBEA1299C837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D51D8E0-0366-42D5-BEA7-EBEA1299C837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2800E6C-FC40-4793-BBA0-787A04C97B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2800E6C-FC40-4793-BBA0-787A04C97B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2800E6C-FC40-4793-BBA0-787A04C97B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2800E6C-FC40-4793-BBA0-787A04C97B01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {853C1E2D-F52C-4D9C-8FA8-B210FB023089}
+	EndGlobalSection
+EndGlobal
