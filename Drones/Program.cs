@@ -1,4 +1,8 @@
-using Microsoft.Extensions.Configuration;
+using Drones.Api.ExceptionHandling;
+using Drones.Core;
+using Drones.Data;
+using Drones.Entities.Models;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +20,17 @@ var logger = new LoggerConfiguration()
 
 builder.Services.AddSingleton<Serilog.ILogger>(logger);
 
+builder.Services.AddDbContext<DronesContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+
+});
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -24,6 +38,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
+app.UseRouting();
 
 app.UseHttpsRedirection();
 
