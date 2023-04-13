@@ -4,14 +4,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drones.Api", "Drones\Drones.Api.csproj", "{EC019F7C-AD57-4933-8DE3-0A71D619C37D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4D51D8E0-0366-42D5-BEA7-EBEA1299C837} = {4D51D8E0-0366-42D5-BEA7-EBEA1299C837}
+		{A8431068-5AFC-4B11-9BE2-C362535E3EA3} = {A8431068-5AFC-4B11-9BE2-C362535E3EA3}
+		{C2800E6C-FC40-4793-BBA0-787A04C97B01} = {C2800E6C-FC40-4793-BBA0-787A04C97B01}
+		{FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2} = {FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "drones-api-test", "drones-api-test\drones-api-test.csproj", "{C8662C8E-C552-45B3-8494-8A8BE50B615A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drones.Core", "Drones.Core\Drones.Core.csproj", "{FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C2800E6C-FC40-4793-BBA0-787A04C97B01} = {C2800E6C-FC40-4793-BBA0-787A04C97B01}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drones.Services", "Drones.Services\Drones.Services.csproj", "{A8431068-5AFC-4B11-9BE2-C362535E3EA3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2} = {FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drones.Data", "Drones.Data\Drones.Data.csproj", "{4D51D8E0-0366-42D5-BEA7-EBEA1299C837}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2} = {FFD23022-E6CB-4D0B-BF7F-A04DA224DCB2}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drones.Entities", "Drones.Entities\Drones.Entities.csproj", "{C2800E6C-FC40-4793-BBA0-787A04C97B01}"
 EndProject

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Drones.Core
 {
-    internal class EnumData
-    {
-    }
+    public enum DroneModelEnum { Lightweight, Middleweight, Cruiserweight, Heavyweight }
+    public enum DroneStateEnum { IDLE, LOADING, LOADED, DELIVERING, DELIVERED, RETURNING }
 }
