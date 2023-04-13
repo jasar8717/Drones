@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Drones.Data.Repositories
 {
-    internal class DroneReository
+    internal class DroneRepository
     {
     }
 }
