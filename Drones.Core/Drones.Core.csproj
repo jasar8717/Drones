@@ -11,4 +11,8 @@
     <Folder Include="Utils\Pagination\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Drones.Entities\Drones.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

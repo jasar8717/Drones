@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Drones.Core.Services
 {
-    internal interface IDroneService
+    public interface IDroneService
     {
     }
 }

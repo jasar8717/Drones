@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Drones.Core\Drones.Core.csproj" />
+  </ItemGroup>
+
 </Project>
