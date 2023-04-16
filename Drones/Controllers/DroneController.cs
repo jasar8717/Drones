@@ -157,7 +157,7 @@ namespace Drones.Api.Controllers
         /// </remarks>
         /// <param name="saveDroneDto"></param>
         /// <returns>A newly registered Drone</returns>
-        /// <response code="200">Returns the newly created item</response>
+        /// <response code="200">Returns status message</response>
         /// <response code="400">If model is not valid</response>          
         [HttpPost("register")]
         public async Task<ActionResult> RegisterDrone([FromBody] SaveDroneDto saveDroneDto, CancellationToken cancellationToken)
@@ -298,7 +298,7 @@ namespace Drones.Api.Controllers
         /// </summary>
         /// <param name="filter"></param>
         /// <returns>List with all drones</returns>
-        /// <response code="200">Returns the battery level</response>
+        /// <response code="200">Returns all drones registered</response>
         /// <response code="400">If errors</response>
         [HttpGet("all")]
         public async Task<ActionResult<IEnumerable<DroneDto>>> GetAll([FromQuery] PaginationFilter filter, CancellationToken cancellationToken)
@@ -312,6 +312,45 @@ namespace Drones.Api.Controllers
 
                 return Ok(new PagedResponse<IEnumerable<DroneDto>>(itemResources, pageResponseFromServer.PageNumber, pageResponseFromServer.PageSize, pageResponseFromServer.TotalRecords));
 
+            }
+            catch (Exception ex)
+            {
+                switch (ex)
+                {
+                    case OperationCanceledException:
+                        return Ok(new PagedResponse<IEnumerable<DroneDto>>(new List<DroneDto>(), 0, 0, 0));
+                    default:
+                        return BadRequest(new Result(ex.Message, "Error"));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Unregister a Drone.
+        /// </summary>
+        /// <param name="serialNumber"></param>
+        /// <returns>NoContent</returns>
+        /// <response code="204">Returns NoContent</response>
+        /// <response code="400">If errors</response>
+        /// <response code="404">If the serial number was not found</response>
+        [HttpDelete("unregister/{serialNumber}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> UnregisterDrone(string serialNumber, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var drone = await _droneService.FindDroneWithMedicationBySerialNumber(serialNumber, cancellationToken);
+
+                if (drone == null)
+                    return NotFound("Drone was not found");
+
+                _droneService.UnregisterDrone(drone, cancellationToken);
+
+                await this._baseService.SaveChanges(cancellationToken);
+
+                return NoContent();
             }
             catch (Exception ex)
             {

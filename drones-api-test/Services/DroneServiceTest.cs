@@ -97,6 +97,11 @@ namespace drones_api_test.Services
             return Task.FromResult((IEnumerable<DroneResource>)result);
         }
 
+        void IDroneService.UnregisterDrone(Drone drone, CancellationToken cancellationToken)
+        {
+            _drone.Remove(drone);
+        }
+
         void IDroneService.Update(Drone item, CancellationToken cancellationToken)
         {
             //

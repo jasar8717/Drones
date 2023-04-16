@@ -4,12 +4,6 @@ using Drones.Core.Services;
 using Drones.Core.Utils.Drone;
 using Drones.Core.Utils.Pagination;
 using Drones.Entities.Models;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Drones.Services
 {
@@ -67,6 +61,12 @@ namespace Drones.Services
         public async Task<int> CountDroneRegistered(CancellationToken cancellationToken)
         {
             return await _unitOfWork.DroneRepository.CountDroneRegistered(cancellationToken);
+        }
+
+        public void UnregisterDrone(Drone drone, CancellationToken cancellationToken)
+        {
+            _unitOfWork.MedicationRepository.RemoveRange(drone.Medications, cancellationToken);
+            _unitOfWork.DroneRepository.Remove(drone, cancellationToken);
         }
     }
 }

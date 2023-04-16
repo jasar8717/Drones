@@ -242,5 +242,32 @@ namespace drones_api_test.Controller
             // Assert
             Assert.IsType<OkObjectResult>(okResult.Result);
         }
+
+        [Fact]
+        public async Task Unregister_NotExistingSerialNumberPassed_ReturnsNotFoundResponse()
+        {
+            // Arrange
+            var serialNumber = "LD-234";
+
+            // Act
+            CancellationToken cancellationToken = default(CancellationToken);
+            var badResponse = await _controller.UnregisterDrone(serialNumber, cancellationToken);
+
+            // Assert
+            Assert.IsType<NotFoundObjectResult>(badResponse);
+        }
+
+        [Fact]
+        public async Task Unregister_ExistingSerialNumberPassed_ReturnsOkResult()
+        {
+            // Arrange
+            var serialNumber = "123";
+            // Act
+            CancellationToken cancellationToken = default(CancellationToken);
+            var okResponse = await _controller.UnregisterDrone(serialNumber, cancellationToken);
+
+            // Assert
+            Assert.IsType<NoContentResult>(okResponse);
+        }
     }
 }
