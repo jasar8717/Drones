@@ -3,15 +3,9 @@ using Drones.Api.Controllers;
 using Drones.Api.Mapping;
 using Drones.Core.Dto;
 using Drones.Core.Services;
-using Drones.Entities.Models;
 using drones_api_test.Services;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace drones_api_test.Controller
 {

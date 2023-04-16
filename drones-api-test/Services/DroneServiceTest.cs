@@ -5,11 +5,6 @@ using Drones.Core.Utils;
 using Drones.Core.Utils.Drone;
 using Drones.Core.Utils.Pagination;
 using Drones.Entities.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace drones_api_test.Services
 {
@@ -36,6 +31,11 @@ namespace drones_api_test.Services
         bool IDroneService.CheckIfSerialNumberExist(string serialNumber, CancellationToken cancellationToken)
         {
             return _drone.Where(d => d.SerialNumber == serialNumber).Any();
+        }
+
+        Task<int> IDroneService.CountDroneRegistered(CancellationToken cancellationToken)
+        {
+            return Task.FromResult(_drone.Count());
         }
 
         Task IDroneService.Create(Drone item, CancellationToken cancellationToken)

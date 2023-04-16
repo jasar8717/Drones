@@ -170,6 +170,11 @@ namespace Drones.Api.Controllers
                 if (!validationResult.IsValid)
                     return BadRequest(validationResult.Errors);
 
+                var countDrones = await _droneService.CountDroneRegistered(cancellationToken);
+
+                if (countDrones >= 10)
+                    return BadRequest(new Result("No more than 10 drones can be registered", "Error"));  //remove this if you want to register more than 10 drones to the fleet
+
                 var droneToCreate = _mapper.Map<SaveDroneDto, Drone>(saveDroneDto);
 
                 if(droneToCreate.State == (int)DroneStateEnum.LOADING && droneToCreate.BatteryCapacity < 25)

@@ -15,5 +15,6 @@ namespace Drones.Core.Services
         void Update(Drone item, CancellationToken cancellationToken);
         Task<PagedResponse<IEnumerable<DroneDto>>> GetAllTransformedToDto(PaginationFilter pageInfo, CancellationToken cancellationToken);
         string CheckBatteryLevel(CancellationToken cancellationToken);
+        Task<int> CountDroneRegistered(CancellationToken cancellationToken);
     }
 }

@@ -10,5 +10,6 @@ namespace Drones.Core.Repositories
         Task<Drone> FindDroneWithMedicationBySerialNumber(string serialNumber, CancellationToken cancellationToken);
         Task<IEnumerable<DroneResource>> ListAvailableDronesForLoading(CancellationToken cancellationToken);
         Task<PagedResponse<IEnumerable<DroneDto>>> GetAllTransformedToDto(PaginationFilter pageInfo, CancellationToken cancellationToken);
+        Task<int> CountDroneRegistered(CancellationToken cancellationToken);
     }
 }

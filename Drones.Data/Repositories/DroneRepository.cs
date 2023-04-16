@@ -72,5 +72,10 @@ namespace Drones.Data.Repositories
 
             return response;
         }
+
+        public async Task<int> CountDroneRegistered(CancellationToken cancellationToken)
+        {
+            return await DronesContext.Drones.CountAsync(cancellationToken);
+        }
     }
 }

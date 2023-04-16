@@ -63,5 +63,10 @@ namespace Drones.Services
             
             return $"There are {countDrones} with battery levels below 25%";
         }
+
+        public async Task<int> CountDroneRegistered(CancellationToken cancellationToken)
+        {
+            return await _unitOfWork.DroneRepository.CountDroneRegistered(cancellationToken);
+        }
     }
 }
