@@ -25,10 +25,7 @@
     <ProjectReference Include="..\Drones.Core\Drones.Core.csproj" />
     <ProjectReference Include="..\Drones.Data\Drones.Data.csproj" />
     <ProjectReference Include="..\Drones.Entities\Drones.Entities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Validators\" />
+    <ProjectReference Include="..\Drones.Services\Drones.Services.csproj" />
   </ItemGroup>
 
 </Project>

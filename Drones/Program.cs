@@ -1,7 +1,10 @@
 using Drones.Api.ExceptionHandling;
+using Drones.Api.Resource;
 using Drones.Core;
+using Drones.Core.Services;
 using Drones.Data;
 using Drones.Entities.Models;
+using Drones.Services;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -19,6 +22,7 @@ var logger = new LoggerConfiguration()
 .CreateLogger();
 
 builder.Services.AddSingleton<Serilog.ILogger>(logger);
+builder.Services.AddSingleton<PeriodicDroneCheckin>();
 
 builder.Services.AddDbContext<DronesContext>(options =>
 {
@@ -27,6 +31,14 @@ builder.Services.AddDbContext<DronesContext>(options =>
 });
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IDroneService, DroneService>();
+builder.Services.AddScoped<IBaseService, BaseService>();
+builder.Services.AddScoped<IMedicationService, MedicationService>();
+
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+builder.Services.AddHostedService(
+    provider => provider.GetRequiredService<PeriodicDroneCheckin>());
 
 var app = builder.Build();
 
