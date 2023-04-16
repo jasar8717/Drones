@@ -2,6 +2,11 @@
 {
     public sealed class SaveDroneDto
     {
+        public SaveDroneDto()
+        {
+            Medications = new List<SaveMedicationDto>();
+        }
+
         public string SerialNumber { get; set; }
         public string Model { get; set; }
         public float WeightLimit { get; set; }

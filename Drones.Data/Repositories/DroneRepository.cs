@@ -61,11 +61,11 @@ namespace Drones.Data.Repositories
 
             var totalRecords = await query.CountAsync(cancellationToken);
 
-            var leads = await query.OrderByDescending(l => l.BatteryCapacity).Skip(pageInfo.PageNumber)
+            var queryFilter = await query.OrderByDescending(l => l.BatteryCapacity).Skip(pageInfo.PageNumber)
                         .Take(pageInfo.PageSize)
                         .ToListAsync(cancellationToken);
 
-            PagedResponse<IEnumerable<DroneDto>> response = new PagedResponse<IEnumerable<DroneDto>>(query,
+            PagedResponse<IEnumerable<DroneDto>> response = new PagedResponse<IEnumerable<DroneDto>>(queryFilter,
                 pageInfo.PageNumber,
                 pageInfo.PageSize,
                 totalRecords);
